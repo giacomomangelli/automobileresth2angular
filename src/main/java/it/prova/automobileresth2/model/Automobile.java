@@ -16,8 +16,8 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
 public class Automobile {
 
@@ -31,5 +31,13 @@ public class Automobile {
 	@Temporal(TemporalType.DATE)
 	private Date dataImmatricolazione;
 	private Boolean inProduzione;
+
+	public Automobile(String marca, String modello, String targa, Date dataImmatricolazione, Boolean inProduzione) {
+		this.marca = marca;
+		this.modello = modello;
+		this.targa = targa;
+		this.dataImmatricolazione = dataImmatricolazione;
+		this.inProduzione = inProduzione;
+	}
 
 }
