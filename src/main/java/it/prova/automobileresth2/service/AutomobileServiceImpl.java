@@ -37,13 +37,13 @@ public class AutomobileServiceImpl implements AutomobileService {
 
 			List<Predicate> predicates = new ArrayList<Predicate>();
 
-			if (!StringUtils.isEmpty(automobileExample.getMarca()))
+			if (!StringUtils.hasLength(automobileExample.getMarca()))
 				predicates.add(cb.like(cb.upper(root.get("marca")), "%" + automobileExample.getMarca().toUpperCase() + "%"));
 
-			if (!StringUtils.isEmpty(automobileExample.getModello()))
+			if (!StringUtils.hasLength(automobileExample.getModello()))
 				predicates.add(cb.like(cb.upper(root.get("modello")), "%" + automobileExample.getModello().toUpperCase() + "%"));
 
-			if (!StringUtils.isEmpty(automobileExample.getTarga()))
+			if (!StringUtils.hasLength(automobileExample.getTarga()))
 				predicates.add(cb.like(cb.upper(root.get("targa")), "%" + automobileExample.getTarga().toUpperCase() + "%"));
 
 			if (automobileExample.getDataImmatricolazione() != null)
